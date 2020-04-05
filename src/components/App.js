@@ -2,6 +2,7 @@ import React from "react";
 
 import SearchBar from "./SearchBar"
 import youtube from "../api/youtube"
+import VideoList from "./VideoList"
 
 require("dotenv").config();
 
@@ -32,6 +33,7 @@ class App extends React.Component {
       <div className="ui container" style={{ marginTop: "10px" }}>
         <SearchBar onFormSubmit={this.onTermSubmit} />
         Found: {this.state.videos.length} videos
+        <VideoList videos={this.state.videos}/>
       </div>
     );
   }
